@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Cuadros  {% endblock %}
+  {% block content %}
+
+<div style="padding-left: 500px; padding-top: 20px;">
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{form.as_p}}
+	<button type="submit">submit</button>
+</form>
+</div>
+{% endblock %}
+

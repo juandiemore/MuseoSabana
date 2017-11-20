@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Detalle {{ obraa.nombre }}  {% endblock %}
+  {% block content %}
+
+	
+
+<div style="padding-left: 550px;">
+<h1>{{ obraa.nombre }}</h1>
+
+<h1>{{ obraa.tipo}} </h1>
+{% if obraa.image %}
+  <img src="{{ obraa.image.url }}">
+  <h5 style="color:#5A6C90 ">{{ obraa.descripcion }}</h5>
+  {% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+appdirs==1.4.3
+cymysql==0.8.9
+Django==1.11
+django-cymysql==0.5.1
+olefile==0.44
+packaging==16.8
+Pillow==4.1.0
+psycopg2==2.7.1
+pyparsing==2.2.0
+pytz==2017.2
+six==1.10.0
+virtualenv==15.1.0

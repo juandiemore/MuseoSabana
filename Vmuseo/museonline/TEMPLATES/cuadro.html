@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %} Cuadros  {% endblock %}
+  {% block content %}
+
+
+    <div class="container">
+
+      <div class="starter-template" id="py">
+        <h1>Inicio Museo Unisabana</h1>
+        <p class="lead">Pagina principal museo usabana.</p>
+  <ul style="display: flex;margin-left: 250px;font-family: arial, helvetica, sans-serif;">
+  {% for pr in obraa %}
+  <li> 
+    
+
+  {% if pr.image %}
+  <img src="{{ pr.image.url }}">
+  {% endif %}
+  <kk>
+  <br>
+
+  <a href="{% url 'obra_detail' pk=pr.pk %}">
+      {{ pr.nombre }}
+    </a>
+</li>
+ 
+  {% endfor %}
+  </ul>   
+        
+    
+      
+      </div>
+
+
+    </div><!-- /.container -->
+  {% endblock %}

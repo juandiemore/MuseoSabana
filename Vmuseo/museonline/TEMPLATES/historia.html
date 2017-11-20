@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Museo Unisabana</title>
+   
+      <div id="menu">
+      <ul>  
+      <li>  <a href="/" style="color:white">                    inicio       </a> </li>
+      <li>  <a href="{% url 'history'%}" style="color:white">   historia ▼    </a> </li>
+      					  
+      <div id="historia">
+      	<ul>
+      		 {% for pr in historiaa %}
+      	  <li>{{pr.nombre}}</li>
+      	  {% endfor %}
+      	</ul>
+      </div>
+      <li>  <a href="{% url 'cuadros'%}" style="color:white">   cuadros      </a> </li>
+      <li>  <a href="{% url 'new_obra'%}" style="color:white">  agregar obra </a> </li>
+      <li>  <a href="{% url 'juego'%}" style="color:white">                    juego        </a> </li>
+
+      </ul>
+      </div>
+  
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.0/examples/starter-template/starter-template.css" rel="stylesheet">
+  
+
+    {% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base4.css' %}">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="/">Usabana</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+    </nav>
+
+
+
+    <div class="container">
+
+      <div class="starter-template" id="py">
+        <h1>recorrido historico Museo Unisabana</h1>
+        <p class="lead">Pagina principal museo usabana.</p>
+               <ul>
+  {% for pr in historiaa %}
+
+ <div>
+   <h1>{{ pr.nombre }}</h1>
+  <br>
+  {{ pr.descripcion }}
+ </div>
+  {% if pr.image %}
+  <img src="{{ pr.image.url }}">
+  {% endif %}
+    {% if pr.image2 %}
+  <img src="{{ pr.image2.url }}">
+  {% endif %}
+    <br>
+
+
+ 
+    
+
+
+  {% endfor %}
+  </ul>   
+        
+    
+      
+      </div>
+
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
